@@ -658,7 +658,8 @@ export default class Dropdown extends PureComponent {
 
     return (
       <View onLayout={this.onLayout} ref={this.updateContainerRef} style={containerStyle}>
-        <TouchableWithoutFeedback {...touchableProps}>
+        <TouchableWithoutFeedback {...touchableProps}
+                                  accessible={false}>
           <View pointerEvents='box-only'>
             {this.renderBase(props)}
             {this.renderRipple()}
