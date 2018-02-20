@@ -657,7 +657,7 @@ export default class Dropdown extends PureComponent {
     };
 
     return (
-      <View onLayout={this.onLayout} ref={this.updateContainerRef} style={containerStyle}>
+      <View onLayout={this.onLayout} ref={this.updateContainerRef} style={containerStyle} accessible={false}>
         <TouchableWithoutFeedback {...touchableProps}
                                   accessible={false}>
           <View pointerEvents='box-only'>
@@ -672,7 +672,8 @@ export default class Dropdown extends PureComponent {
           onRequestClose={this.onClose}
           supportedOrientations={supportedOrientations}
         >
-          <TouchableWithoutFeedback onPress={this.onClose}>
+          <TouchableWithoutFeedback onPress={this.onClose}
+                                    accessible={false}>
             <View style={overlayStyle}>
               <Animated.View
                 style={[styles.picker, pickerStyle, pickerStyleOverrides]}
