@@ -702,7 +702,8 @@ export default class Dropdown extends PureComponent {
           onRequestClose={this.onClose}
           supportedOrientations={supportedOrientations}
         >
-          <TouchableWithoutFeedback onPress={this.onClose}>
+          <TouchableWithoutFeedback onPress={this.onClose}
+                                    accessible={false}>
             <View style={overlayStyle}>
               <Animated.View
                 style={[styles.picker, pickerStyle, pickerStyleOverrides]}
